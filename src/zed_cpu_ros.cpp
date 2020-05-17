@@ -480,9 +480,11 @@ public:
         return;
     }
     if (frame_rate > max_frame_rate)
+    {
       ROS_WARN("frame_rate(%fHz) too high for resolution(%s), downgraded to %fHz", frame_rate, reso_str.c_str(),
                max_frame_rate);
-    frame_rate = max_frame_rate;
+      frame_rate = max_frame_rate;
+    }
   }
 
 private:
